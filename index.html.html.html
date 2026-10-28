@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesignKita - Jasa Desain Digital & Video Editing Praktis</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eefbf4',
+                            100: '#d7f5e3',
+                            500: '#2ecc71',
+                            600: '#1eab59',
+                            800: '#134e3a',
+                            900: '#0f382c',
+                            dark: '#0a231b'
+                        },
+                        wa: '#25D366'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .dark .glass {
+            background: rgba(15, 56, 44, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f382c 0%, #134e3a 50%, #1eab59 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-brand-dark text-gray-800 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="sticky top-0 z-40 glass border-b border-gray-200 dark:border-brand-800/50 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Brand Name -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center text-white shadow-lg shadow-brand-900/20">
+                        <i class="fa-solid font-bold text-2xl">DK</i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black tracking-tight text-brand-900 dark:text-brand-500">Design<span class="text-brand-500 dark:text-white">Kita</span></span>
+                        <p class="text-[10px] font-semibold text-gray-500 dark:text-gray-400 -mt-1 tracking-wider uppercase">Teknik Elektro UPNVJ</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                    <a href="#home" class="hover:text-brand-500 transition">Beranda</a>
+                    <a href="#katalog" class="hover:text-brand-500 transition">Katalog & Harga</a>
+                    <a href="#alur" class="hover:text-brand-500 transition">Alur Pesan</a>
+                    <a href="#keunggulan" class="hover:text-brand-500 transition">Keunggulan</a>
+                    <a href="#kalkulator" class="hover:text-brand-500 transition">Kalkulator</a>
+                    <a href="#tim" class="hover:text-brand-500 transition">Tim Kami</a>
+                </div>
+
+                <!-- Right Action Buttons -->
+                <div class="flex items-center space-x-3">
+                    <!-- Dark Mode Toggle -->
+                    <button id="themeToggle" class="p-2.5 rounded-xl bg-gray-200 dark:bg-brand-800 text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-brand-600 transition" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+
+                    <!-- Order Call To Action Button -->
+                    <a href="#formOrder" class="hidden sm:inline-flex items-center space-x-2 bg-brand-900 hover:bg-brand-800 dark:bg-brand-500 dark:hover:bg-brand-600 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-md transition transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Pesan Sekarang</span>
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-brand-800">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Container -->
+        <div id="mobileMenu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 border-t border-gray-200 dark:border-brand-800 bg-white dark:bg-brand-900">
+            <a href="#home" class="block px-3 py-2 rounded-md font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 dark:hover:bg-brand-800">Beranda</a>
+            <a href="#katalog" class="block px-3 py-2 rounded-md font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 dark:hover:bg-brand-800">Katalog & Harga</a>
+            <a href="#alur" class="block px-3 py-2 rounded-md font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 dark:hover:bg-brand-800">Alur Pesan</a>
+            <a href="#keunggulan" class="block px-3 py-2 rounded-md font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 dark:hover:bg-brand-800">Keunggulan</a>
+            <a href="#kalkulator" class="block px-3 py-2 rounded-md font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 dark:hover:bg-brand-800">Kalkulator Estimasi</a>
+            <a href="#tim" class="block px-3 py-2 rounded-md font-medium text-gray-700 dark:text-gray-200 hover:bg-brand-50 dark:hover:bg-brand-800">Tim Kami</a>
+            <a href="https://wa.me/6282308236770?text=Halo%20Admin%20DesignKita,%20saya%20ingin%20konsultasi%20desain" target="_blank" class="flex items-center justify-center space-x-2 w-full bg-wa text-white py-2.5 rounded-xl font-bold mt-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Chat Admin WhatsApp</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-32 gradient-bg text-white">
+        <!-- Abstract Geometric Background Elements -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-brand-500/10 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 -left-24 w-80 h-80 rounded-full bg-emerald-400/10 blur-2xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Hero Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold tracking-wide text-brand-100">
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+                        <span>Startup Kewirausahaan Teknik Elektro UPNVJ</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+                        Solusi Desain Digital <br class="hidden sm:inline">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-emerald-200">Mudah, Praktis & Terjangkau</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-gray-200 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        Bantu UMKM, Komunitas, & Masyarakat Awam Teknologi mewujudkan media promosi profesional tanpa ribet. Cukup kirim bahan lewat WhatsApp, kami buatkan hasil yang memukau!
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#katalog" class="w-full sm:w-auto px-8 py-4 bg-brand-500 hover:bg-brand-600 text-brand-dark font-bold rounded-2xl shadow-xl shadow-brand-500/20 transition transform hover:-translate-y-1 text-center">
+                            Lihat Katalog & Harga
+                        </a>
+                        <a href="https://wa.me/6282308236770?text=Halo%20Admin%20DesignKita,%20saya%20mau%20konsultasi%20desain%20media%20promosi" target="_blank" class="w-full sm:w-auto px-7 py-4 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-white font-semibold rounded-2xl transition text-center flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-xl text-wa"></i>
+                            <span>Chat Admin Direct</span>
+                        </a>
+                    </div>
+
+                    <!-- Highlight Badges -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-white/10 text-center lg:text-left">
+                        <div>
+                            <p class="text-xl sm:text-2xl font-black text-brand-500">Mulai 15Rb</p>
+                            <p class="text-xs text-gray-300">Harga Ramah UMKM</p>
+                        </div>
+                        <div>
+                            <p class="text-xl sm:text-2xl font-black text-brand-500">100% WA</p>
+                            <p class="text-xs text-gray-300">Pemesanan Praktis</p>
+                        </div>
+                        <div>
+                            <p class="text-xl sm:text-2xl font-black text-brand-500">Revisi</p>
+                            <p class="text-xs text-gray-300">Sederhana & Cepat</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Decorative Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute inset-0 bg-brand-500 rounded-3xl blur-2xl opacity-20 transform rotate-6"></div>
+                        <div class="relative bg-white dark:bg-brand-900 border border-white/20 dark:border-brand-700/50 p-6 sm:p-8 rounded-3xl shadow-2xl text-gray-800 dark:text-white">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-xl bg-wa/20 text-wa flex items-center justify-center font-bold">
+                                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="font-bold text-sm">Pesan Cepat via WhatsApp</h2>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">Admin 0823-0823-6770</p>
+                                    </div>
+                                </div>
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-900/50 dark:text-emerald-300">Online</span>
+                            </div>
+
+                            <!-- Sample Chat Simulation -->
+                            <div class="space-y-3 text-xs sm:text-sm bg-gray-50 dark:bg-brand-dark/60 p-4 rounded-2xl mb-6 border border-gray-100 dark:border-brand-800">
+                                <div class="bg-brand-100 dark:bg-brand-800/80 p-3 rounded-xl rounded-tl-none text-brand-900 dark:text-brand-100 max-w-[85%]">
+                                    <p class="font-semibold text-[10px] text-brand-700 dark:text-brand-300 mb-1">Pelanggan UMKM</p>
+                                    "Halo Kak, mau pesan poster untuk promosi usaha makanan saya, bisa dibantu?"
+                                </div>
+                                <div class="bg-white dark:bg-brand-800 p-3 rounded-xl rounded-tr-none text-gray-800 dark:text-gray-100 ml-auto max-w-[85%] shadow-sm border border-gray-100 dark:border-brand-700">
+                                    <p class="font-semibold text-[10px] text-brand-600 dark:text-brand-400 mb-1">Admin DesignKita</p>
+                                    "Halo Kak! Tentu bisa. Cukup kirimkan nama produk, foto, dan info promo. Kami desainkan seharga Rp 15.000!"
+                                </div>
+                            </div>
+
+                            <a href="#formOrder" class="block w-full text-center py-3 px-4 bg-brand-900 dark:bg-brand-500 text-white font-bold rounded-xl hover:bg-brand-800 dark:hover:bg-brand-600 transition shadow-md">
+                                Buat Pesanan Anda Sekarang <i class="fa-solid fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- KATALOG PRODUK & FILTER SECTION -->
+    <section id="katalog" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-brand-600 dark:text-brand-500 font-bold text-sm uppercase tracking-wider">Katalog Layanan Digital</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white mt-2">Pilih Layanan Sesuai Kebutuhan Anda</h2>
+            <p class="text-gray-600 dark:text-gray-400 mt-3 text-sm sm:text-base">Daftar harga transparan tanpa biaya tersembunyi. Siap pakai untuk WhatsApp, Instagram, Cetak, dan Promosi digital.</p>
+        </div>
+
+        <!-- Filter & Search Controls -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
+            <!-- Filter Category Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 w-full md:w-auto" id="filterContainer">
+                <button data-filter="all" class="filter-btn active px-5 py-2.5 rounded-xl text-sm font-semibold transition bg-brand-900 text-white dark:bg-brand-500">Semua Layanan</button>
+                <button data-filter="grafis" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition bg-white dark:bg-brand-900 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-brand-800 hover:bg-gray-100">Desain Grafis</button>
+                <button data-filter="video" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition bg-white dark:bg-brand-900 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-brand-800 hover:bg-gray-100">Video & Social</button>
+                <button data-filter="event" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition bg-white dark:bg-brand-900 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-brand-800 hover:bg-gray-100">Event & Cetak</button>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="relative w-full md:w-72">
+                <input type="text" id="searchInput" placeholder="Cari layanan..." class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 dark:border-brand-800 bg-white dark:bg-brand-900 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 text-gray-800 dark:text-white">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-gray-400 text-sm"></i>
+            </div>
+        </div>
+
+        <!-- Catalog Product Grid -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Cards populated dynamically via JS -->
+        </div>
+    </section>
+
+    <!-- ALUR PEMESANAN / HOW IT WORKS SECTION -->
+    <section id="alur" class="py-20 bg-gray-100 dark:bg-brand-900/40 border-y border-gray-200 dark:border-brand-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 dark:text-brand-500 font-bold text-sm uppercase tracking-wider">Langkah Mudah</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white mt-2">Alur Pemesanan di DesignKita</h2>
+                <p class="text-gray-600 dark:text-gray-400 mt-2 text-sm sm:text-base">Tidak perlu paham aplikasi desain rumit. Biarkan tim kami menyelesaikan seluruh prosesnya untuk Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6 text-center relative">
+                <!-- Step 1 -->
+                <div class="bg-white dark:bg-brand-900 p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-brand-800 relative hover:shadow-md transition">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-100 dark:bg-brand-800 text-brand-600 dark:text-brand-400 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                        1
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Chat WA</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-400">Hubungi WhatsApp admin atau gunakan form pesanan di website ini.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white dark:bg-brand-900 p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-brand-800 relative hover:shadow-md transition">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-100 dark:bg-brand-800 text-brand-600 dark:text-brand-400 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                        2
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Kirim Detail</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-400">Kirimkan info produk, foto, tulisan, atau preferensi warna yang diinginkan.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white dark:bg-brand-900 p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-brand-800 relative hover:shadow-md transition">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-100 dark:bg-brand-800 text-brand-600 dark:text-brand-400 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                        3
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Tim Mendesain</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-400">Tim desainer profesional kami mengerjakan konsep desain sesuai brief Anda.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-white dark:bg-brand-900 p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-brand-800 relative hover:shadow-md transition">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-100 dark:bg-brand-800 text-brand-600 dark:text-brand-400 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                        4
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Revisi Sederhana</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-400">Review hasil desain dan ajukan penyesuaian/revisi sederhana jika perlu.</p>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="bg-white dark:bg-brand-900 p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-brand-800 relative hover:shadow-md transition">
+                    <div class="w-14 h-14 rounded-2xl bg-wa text-white flex items-center justify-center text-2xl font-bold mx-auto mb-4 shadow-lg shadow-wa/20">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">File Terkirim</h3>
+                    <p class="text-xs text-gray-600 dark:text-gray-400">Terima file resolusi tinggi digital/siap cetak dan siap digunakan!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEUNGGULAN / WHY CHOOSE US SECTION -->
+    <section id="keunggulan" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-5 space-y-6">
+                <span class="text-brand-600 dark:text-brand-500 font-bold text-sm uppercase tracking-wider">Mengapa DesignKita?</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-gray-900 dark:text-white">Solusi Terbaik Praktis Bagi Pelaku Usaha & Masyarakat</h2>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm sm:text-base">
+                    Kami hadir mengatasi masalah keterbatasan keterampilan teknologi, waktu, dan anggaran. Memberikan hasil berkualitas tinggi dengan harga yang sangat bersahabat bagi UMKM.
+                </p>
+
+                <div class="space-y-4 pt-2">
+                    <div class="flex items-start space-x-4 p-4 rounded-2xl bg-white dark:bg-brand-900 shadow-sm border border-gray-100 dark:border-brand-800">
+                        <div class="w-10 h-10 rounded-xl bg-brand-100 dark:bg-brand-800 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-tags"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base text-gray-900 dark:text-white">Sangat Terjangkau</h3>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">Paket desain mikro mulai Rp 15.000 per desain. Cocok untuk menghemat operasional promosi.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-4 rounded-2xl bg-white dark:bg-brand-900 shadow-sm border border-gray-100 dark:border-brand-800">
+                        <div class="w-10 h-10 rounded-xl bg-brand-100 dark:bg-brand-800 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base text-gray-900 dark:text-white">Tanpa Belajar Aplikasi</h3>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">Anda tidak perlu menguasai Canva, Photoshop, atau CapCut. Pendampingan personal 100% via WhatsApp.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4 p-4 rounded-2xl bg-white dark:bg-brand-900 shadow-sm border border-gray-100 dark:border-brand-800">
+                        <div class="w-10 h-10 rounded-xl bg-brand-100 dark:bg-brand-800 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-base text-gray-900 dark:text-white">Layanan Lengkap Serba Ada</h3>
+                            <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">Mulai dari poster, flyer, feed sosial media, edit video reels/TikTok, hingga ID card & sertifikat event.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 bg-brand-900 text-white rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-2xl">
+                <div class="relative z-10 space-y-6">
+                    <div class="inline-block px-3 py-1 rounded-full bg-brand-500/20 border border-brand-500/30 text-brand-300 text-xs font-semibold">
+                        Studi Kasus Customer Persona
+                    </div>
+                    <blockquote class="text-lg sm:text-xl font-medium italic leading-relaxed text-gray-200">
+                        "Sebagai pengurus organisasi lansia, kami kesulitan jika harus membuat desain poster acara secara independen. Dengan DesignKita, saya cukup kirim pesan WhatsApp dan foto, hasilnya langsung jadi dan sangat rapi!"
+                    </blockquote>
+                    <div class="flex items-center space-x-4 pt-4 border-t border-brand-800">
+                        <div class="w-12 h-12 rounded-full bg-brand-700 flex items-center justify-center text-xl font-bold text-brand-300">
+                            BW
+                        </div>
+                        <div>
+                            <p class="font-bold text-white text-base">Bu Wieda (62 Tahun)</p>
+                            <p class="text-xs text-brand-300">Pengurus Lembaga Lansia Indonesia (LLI)</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Background Glow -->
+                <div class="absolute -bottom-10 -right-10 w-60 h-60 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- KALKULATOR ESTIMASI HARGA (INTERAKTIF) -->
+    <section id="kalkulator" class="py-20 bg-gray-100 dark:bg-brand-900/30 border-y border-gray-200 dark:border-brand-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-600 dark:text-brand-500 font-bold text-sm uppercase tracking-wider">Fitur Interaktif</span>
+                <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mt-1">Kalkulator Estimasi Biaya Pesanan</h2>
+                <p class="text-gray-600 dark:text-gray-400 text-sm mt-2">Pilih beberapa layanan sekaligus untuk menghitung perkiraan total biaya pesanan Anda secara instan.</p>
+            </div>
+
+            <div class="bg-white dark:bg-brand-900 rounded-3xl p-6 sm:p-10 shadow-xl border border-gray-200 dark:border-brand-800">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Checkbox Selection -->
+                    <div class="space-y-3" id="calculatorItems">
+                        <!-- Dynamic Checkbox Item List -->
+                    </div>
+
+                    <!-- Summary Box -->
+                    <div class="bg-gray-50 dark:bg-brand-dark p-6 rounded-2xl border border-gray-200 dark:border-brand-800 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-4 border-b pb-2 border-gray-200 dark:border-brand-800">Ringkasan Pesanan</h3>
+                            <div id="selectedListSummary" class="space-y-2 text-xs sm:text-sm text-gray-600 dark:text-gray-300 min-h-[120px]">
+                                <p class="text-gray-400 italic">Belum ada item yang dipilih.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-gray-200 dark:border-brand-800 space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-gray-800 dark:text-gray-200 text-base">Total Estimasi:</span>
+                                <span id="totalPriceCalc" class="text-2xl font-black text-brand-600 dark:text-brand-500">Rp 0</span>
+                            </div>
+                            <button id="calcCheckoutBtn" disabled class="w-full py-3.5 px-4 bg-wa opacity-50 cursor-not-allowed text-white font-bold rounded-xl flex items-center justify-center space-x-2 transition shadow-md">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span>Pesan Estimasi via WA</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULIR PEMESANAN LANGSUNG -->
+    <section id="formOrder" class="py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white dark:bg-brand-900 rounded-3xl p-6 sm:p-10 shadow-2xl border border-gray-200 dark:border-brand-800">
+            <div class="text-center max-w-xl mx-auto mb-8">
+                <span class="text-brand-600 dark:text-brand-500 font-bold text-sm uppercase tracking-wider">Formulir Pesanan Cepat</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white mt-1">Kustomisasi Pesanan Anda</h2>
+                <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-1">Isi formulir singkat di bawah ini. Sistem akan memformat teks pesanan otomatis ke WhatsApp Admin.</p>
+            </div>
+
+            <form id="waOrderForm" class="space-y-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">Nama Pemesan / Usaha *</label>
+                        <input type="text" id="custName" required placeholder="Contoh: Budi (Kopi Sejahtera)" class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-brand-700 bg-gray-50 dark:bg-brand-dark text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 text-gray-900 dark:text-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">Pilih Layanan Utama *</label>
+                        <select id="custService" required class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-brand-700 bg-gray-50 dark:bg-brand-dark text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 text-gray-900 dark:text-white">
+                            <option value="" disabled selected>-- Pilih Layanan --</option>
+                            <option value="Poster / Flyer (Rp15.000)">Poster / Flyer (Rp15.000)</option>
+                            <option value="Instagram Feed (Rp20.000/slide)">Instagram Feed (Rp20.000/slide)</option>
+                            <option value="ID Card (Rp15.000)">ID Card (Rp15.000)</option>
+                            <option value="Banner (Rp20.000)">Banner Promosi (Rp20.000)</option>
+                            <option value="Edit Video / Reels (Rp50.000)">Edit Video / Reels (Rp50.000)</option>
+                            <option value="Undangan Digital (Rp15.000)">Undangan Digital (Rp15.000)</option>
+                            <option value="Logo Bisnis/Komunitas (Rp20.000)">Logo Bisnis/Komunitas (Rp20.000)</option>
+                            <option value="Sertifikat (Rp15.000)">Sertifikat Event (Rp15.000)</option>
+                            <option value="Frame Live Report (Rp15.000)">Frame Live Report (Rp15.000)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">Jumlah / Kuantitas *</label>
+                        <input type="number" id="custQty" min="1" value="1" required class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-brand-700 bg-gray-50 dark:bg-brand-dark text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 text-gray-900 dark:text-white">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">Batas Waktu / Deadline (Opsional)</label>
+                        <input type="text" id="custDeadline" placeholder="Contoh: Besok sore / 2 hari lagi" class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-brand-700 bg-gray-50 dark:bg-brand-dark text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 text-gray-900 dark:text-white">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1.5">Deskripsi / Detail Kebutuhan *</label>
+                    <textarea id="custNotes" rows="3" required placeholder="Tuliskan teks yang ingin ditampilkan, warna dominan, atau konsep gambar..." class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-brand-700 bg-gray-50 dark:bg-brand-dark text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 text-gray-900 dark:text-white"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-4 bg-wa hover:bg-emerald-600 text-white font-bold text-base rounded-2xl shadow-xl shadow-wa/20 transition flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>Kirim Pesanan ke WhatsApp Admin</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- PROFIL FOUNDER / TIM KELOMPOK 8 -->
+    <section id="tim" class="py-20 bg-gray-100 dark:bg-brand-900/40 border-t border-gray-200 dark:border-brand-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 dark:text-brand-500 font-bold text-sm uppercase tracking-wider">Meet The Founders</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white mt-2">Tim Kelompok 8 Teknik Elektro</h2>
+                <p class="text-gray-600 dark:text-gray-400 mt-2 text-sm sm:text-base">Mata Kuliah Kewirausahaan di Bidang Teknologi - UPN "Veteran" Jakarta</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- CEO -->
+                <div class="bg-white dark:bg-brand-900 rounded-3xl p-8 text-center shadow-lg border border-gray-200 dark:border-brand-800 hover:-translate-y-2 transition duration-300">
+                    <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-brand-900 to-brand-500 mx-auto mb-6 flex items-center justify-center text-white text-3xl font-black shadow-lg">
+                        RD
+                    </div>
+                    <span class="inline-block px-3 py-1 bg-brand-100 dark:bg-brand-800 text-brand-700 dark:text-brand-300 text-xs font-bold rounded-full mb-2">CEO</span>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">Raden Dimas</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Chief Executive Officer</p>
+                    <p class="text-xs text-gray-600 dark:text-gray-300 mt-4 leading-relaxed">Bertanggung jawab atas visi strategist utama, kepemimpinan tim, serta ekspansi bisnis startup DesignKita.</p>
+                </div>
+
+                <!-- CMO -->
+                <div class="bg-white dark:bg-brand-900 rounded-3xl p-8 text-center shadow-lg border border-gray-200 dark:border-brand-800 hover:-translate-y-2 transition duration-300">
+                    <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-brand-900 to-brand-500 mx-auto mb-6 flex items-center justify-center text-white text-3xl font-black shadow-lg">
+                        BD
+                    </div>
+                    <span class="inline-block px-3 py-1 bg-brand-100 dark:bg-brand-800 text-brand-700 dark:text-brand-300 text-xs font-bold rounded-full mb-2">CMO</span>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">Bimo Dwi Putro</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Chief Marketing Officer</p>
+                    <p class="text-xs text-gray-600 dark:text-gray-300 mt-4 leading-relaxed">Mengelola strategi pemasaran digital, perancangan promosi UMKM, dan hubungan pelanggan via WhatsApp.</p>
+                </div>
+
+                <!-- CTO -->
+                <div class="bg-white dark:bg-brand-900 rounded-3xl p-8 text-center shadow-lg border border-gray-200 dark:border-brand-800 hover:-translate-y-2 transition duration-300">
+                    <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-brand-900 to-brand-500 mx-auto mb-6 flex items-center justify-center text-white text-3xl font-black shadow-lg">
+                        HS
+                    </div>
+                    <span class="inline-block px-3 py-1 bg-brand-100 dark:bg-brand-800 text-brand-700 dark:text-brand-300 text-xs font-bold rounded-full mb-2">CTO</span>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">Hafizh Salman Rahardjo</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Chief Technology Officer</p>
+                    <p class="text-xs text-gray-600 dark:text-gray-300 mt-4 leading-relaxed">Mengawasi alur teknologi desain digital, sistem otomatisasi pemesanan katalog, dan integrasi tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-white pt-16 pb-12 border-t border-brand-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-brand-800/60">
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white font-bold">
+                            DK
+                        </div>
+                        <span class="text-2xl font-black">Design<span class="text-brand-500">Kita</span></span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
+                        Jasa Desain Digital & Editing Video Terjangkau berbasis Teknologi. Solusi praktis bagi UMKM dan masyarakat luas untuk media promosi profesional.
+                    </p>
+                    <p class="text-xs text-brand-400 font-semibold">
+                        Universitas Pembangunan Nasional "Veteran" Jakarta
+                    </p>
+                </div>
+
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="font-bold text-sm text-brand-300 uppercase tracking-wider">Navigasi Cepat</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li><a href="#home" class="hover:text-brand-500 transition">Beranda</a></li>
+                        <li><a href="#katalog" class="hover:text-brand-500 transition">Katalog Produk</a></li>
+                        <li><a href="#alur" class="hover:text-brand-500 transition">Alur Pemesanan</a></li>
+                        <li><a href="#kalkulator" class="hover:text-brand-500 transition">Kalkulator Estimasi</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 space-y-3">
+                    <h4 class="font-bold text-sm text-brand-300 uppercase tracking-wider">Kontak Resmi Admin</h4>
+                    <p class="text-xs text-gray-300">Hubungi kami langsung melalui WhatsApp untuk konsultasi gratis atau pertanyaan seputar pesanan:</p>
+                    <a href="https://wa.me/6282308236770" target="_blank" class="inline-flex items-center space-x-2 bg-wa hover:bg-emerald-600 text-white px-4 py-2.5 rounded-xl font-bold text-xs transition">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>WhatsApp: 0823-0823-6770</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 space-y-4 sm:space-y-0">
+                <p>&copy; 2026 DesignKita - Kelompok 8 Teknik Elektro UPNVJ. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <span>Raden Dimas (CEO)</span>
+                    <span>Bimo Dwi (CMO)</span>
+                    <span>Hafizh Salman (CTO)</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/6282308236770?text=Halo%20Admin%20DesignKita,%20saya%20mau%20tanya%20layanan%20desain" target="_blank" class="fixed bottom-6 right-6 z-50 bg-wa hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl shadow-wa/50 transition transform hover:scale-110" aria-label="Chat WhatsApp Admin">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- PRODUCT DETAIL MODAL -->
+    <div id="productModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div class="bg-white dark:bg-brand-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl border border-gray-200 dark:border-brand-800 space-y-5 animate-fade-in">
+            <button id="closeModalBtn" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 dark:hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center space-x-4">
+                <div id="modalIcon" class="w-14 h-14 rounded-2xl bg-brand-100 dark:bg-brand-800 text-brand-600 dark:text-brand-400 flex items-center justify-center text-2xl shrink-0"></div>
+                <div>
+                    <span id="modalCategory" class="text-[10px] uppercase font-bold tracking-wider text-brand-600 dark:text-brand-400"></span>
+                    <h3 id="modalTitle" class="text-xl font-bold text-gray-900 dark:text-white"></h3>
+                    <p id="modalPrice" class="text-brand-600 dark:text-brand-500 font-extrabold text-lg mt-0.5"></p>
+                </div>
+            </div>
+
+            <p id="modalDesc" class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed"></p>
+
+            <div class="bg-gray-50 dark:bg-brand-dark p-4 rounded-2xl space-y-2 border border-gray-100 dark:border-brand-800">
+                <p class="text-xs font-bold text-gray-800 dark:text-gray-200">Keuntungan Layanan Ini:</p>
+                <ul id="modalFeatures" class="text-xs text-gray-600 dark:text-gray-300 space-y-1 list-disc list-inside"></ul>
+            </div>
+
+            <div class="flex gap-3 pt-2">
+                <button id="modalOrderBtn" class="w-full py-3 bg-wa hover:bg-emerald-600 text-white font-bold rounded-xl text-sm transition flex items-center justify-center space-x-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Pesan Langsung via WA</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // DATA KATALOG PRODUK STARTUP DESIGNKITA
+        const products = [
+            {
+                id: 'poster',
+                title: 'Poster / Flyer',
+                category: 'grafis',
+                price: 15000,
+                priceText: 'Rp 15.000',
+                icon: 'fa-solid fa-file-image',
+                desc: 'Desain poster kegiatan, promosi UMKM, event seminar, atau flyer digital/siap cetak.',
+                features: ['Format HD Digital & Siap Cetak', 'Revisi Sederhana Gratis', 'Proses Cepat 1-2 Hari']
+            },
+            {
+                id: 'feed',
+                title: 'Instagram Feed',
+                category: 'video',
+                price: 20000,
+                priceText: 'Rp 20.000 / slide',
+                icon: 'fa-solid fa-border-all',
+                desc: 'Desain feed Instagram estetik untuk promosi produk, konten edukasi bisnis, atau personal branding.',
+                features: ['Ukuran Presisi 1:1 / 4:5', 'Visual Menarik & Konsisten', 'Siap Posting di IG/FB']
+            },
+            {
+                id: 'idcard',
+                title: 'ID Card',
+                category: 'event',
+                price: 15000,
+                priceText: 'Rp 15.000',
+                icon: 'fa-solid fa-id-card',
+                desc: 'Desain ID Card profesional untuk panitia event, pengurus organisasi, perusahaan, atau sekolah.',
+                features: ['Sisi Depan / Belakang', 'Template Siap Cetak Massal', 'Desain Elegan']
+            },
+            {
+                id: 'banner',
+                title: 'Banner / Spanduk',
+                category: 'grafis',
+                price: 20000,
+                priceText: 'Rp 20.000',
+                icon: 'fa-solid fa-vector-square',
+                desc: 'Desain banner toko, baliho acara, spanduk promosi jualan, atau kebutuhan digital banner.',
+                features: ['Resolusi Tinggi Tidak Pecah', 'Custom Ukuran Bebas', 'Siap Dikirim ke Percetakan']
+            },
+            {
+                id: 'video',
+                title: 'Edit Video / Promosi',
+                category: 'video',
+                price: 50000,
+                priceText: 'Rp 50.000',
+                icon: 'fa-solid fa-video',
+                desc: 'Editing video pendek promosi produk UMKM, konten Reels Instagram, TikTok, atau tugas event.',
+                features: ['Diedit dengan CapCut Pro', 'Pemberian Subtitle & Efek', 'Format Vertikal 9:16 / Horizontal']
+            },
+            {
+                id: 'undangan',
+                title: 'Undangan Digital',
+                category: 'event',
+                price: 15000,
+                priceText: 'Rp 15.000',
+                icon: 'fa-solid fa-envelope-open-text',
+                desc: 'Desain undangan acara digital (Pernikahan, Ulang Tahun, Webinar, atau Acara Komunitas).',
+                features: ['Format Gambar / PDF Siap Kirim', 'Desain Modern & Aesthetic', 'Proses Cepat']
+            },
+            {
+                id: 'logo',
+                title: 'Logo Bisnis / Komunitas',
+                category: 'grafis',
+                price: 20000,
+                priceText: 'Rp 20.000',
+                icon: 'fa-solid fa-cubes',
+                desc: 'Desain logo simpel dan memorable untuk usaha baru, branding UMKM, atau identitas organisasi.',
+                features: ['Filosofi Warna & Bentuk', 'Format Transparan PNG & HD', 'Siap Dipasang di Medsos/Stiker']
+            },
+            {
+                id: 'sertifikat',
+                title: 'Sertifikat Digital',
+                category: 'event',
+                price: 15000,
+                priceText: 'Rp 15.000',
+                icon: 'fa-solid fa-award',
+                desc: 'Desain sertifikat penghargaan lomba, peserta webinar, pelatihan, atau apresiasi event.',
+                features: ['Layout Resmi & Elegan', 'Mudah Dilakukan Mail Merge', 'Format PDF High Quality']
+            },
+            {
+                id: 'livereport',
+                title: 'Frame Live Report',
+                category: 'video',
+                price: 15000,
+                priceText: 'Rp 15.000',
+                icon: 'fa-solid fa-camera-retro',
+                desc: 'Desain bingkai/frame overlay live report khusus InstaStory untuk laporan langsung acara.',
+                features: ['Format PNG Transparan', 'Tampilan Story Eksklusif', 'Sangat Mudah Digunakan']
+            }
+        ];
+
+        // RENDER CATALOG CARDS
+        function renderProducts(items) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+
+            if (items.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-12">
+                        <i class="fa-solid fa-box-open text-4xl text-gray-400 mb-3"></i>
+                        <p class="text-gray-500 font-medium">Layanan tidak ditemukan.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            items.forEach(prod => {
+                const card = document.createElement('div');
+                card.className = 'bg-white dark:bg-brand-900 rounded-3xl p-6 shadow-md border border-gray-200 dark:border-brand-800 hover:shadow-xl transition transform hover:-translate-y-1 flex flex-col justify-between';
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-100 dark:bg-brand-800 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl">
+                                <i class="${prod.icon}"></i>
+                            </div>
+                            <span class="text-[10px] font-bold px-3 py-1 rounded-full bg-gray-100 dark:bg-brand-800 text-gray-600 dark:text-gray-300 uppercase tracking-wider">${prod.category}</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">${prod.title}</h3>
+                        <p class="text-brand-600 dark:text-brand-500 font-black text-lg mb-3">${prod.priceText}</p>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-6 line-clamp-2">${prod.desc}</p>
+                    </div>
+                    <div class="flex items-center gap-2 pt-2 border-t border-gray-100 dark:border-brand-800">
+                        <button onclick="openModal('${prod.id}')" class="w-1/2 py-2.5 px-3 bg-gray-100 dark:bg-brand-800 hover:bg-gray-200 dark:hover:bg-brand-700 text-gray-800 dark:text-white font-semibold text-xs rounded-xl transition">
+                            Detail
+                        </button>
+                        <a href="#formOrder" onclick="selectServiceInForm('${prod.title} (${prod.priceText})')" class="w-1/2 py-2.5 px-3 bg-brand-900 hover:bg-brand-800 dark:bg-brand-500 dark:hover:bg-brand-600 text-white font-bold text-xs rounded-xl text-center transition">
+                            Pesan
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // RENDER CALCULATOR CHECKBOXES
+        function renderCalculator() {
+            const calcContainer = document.getElementById('calculatorItems');
+            calcContainer.innerHTML = '';
+
+            products.forEach(prod => {
+                const item = document.createElement('label');
+                item.className = 'flex items-center justify-between p-3.5 rounded-2xl bg-gray-50 dark:bg-brand-dark border border-gray-200 dark:border-brand-800 cursor-pointer hover:bg-gray-100 dark:hover:bg-brand-800/50 transition';
+                item.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <input type="checkbox" value="${prod.price}" data-title="${prod.title}" class="calc-checkbox w-4 h-4 text-brand-600 rounded focus:ring-brand-500">
+                        <span class="text-xs font-semibold text-gray-800 dark:text-gray-200">${prod.title}</span>
+                    </div>
+                    <span class="text-xs font-bold text-brand-600 dark:text-brand-400">${prod.priceText}</span>
+                `;
+                calcContainer.appendChild(item);
+            });
+
+            // Add Event Listeners for Checkboxes
+            document.querySelectorAll('.calc-checkbox').forEach(cb => {
+                cb.addEventListener('change', updateCalcTotal);
+            });
+        }
+
+        // UPDATE CALCULATOR TOTAL
+        function updateCalcTotal() {
+            const checkboxes = document.querySelectorAll('.calc-checkbox:checked');
+            let total = 0;
+            const selectedTitles = [];
+
+            checkboxes.forEach(cb => {
+                total += parseInt(cb.value);
+                selectedTitles.push(cb.getAttribute('data-title'));
+            });
+
+            const summaryBox = document.getElementById('selectedListSummary');
+            const totalDisplay = document.getElementById('totalPriceCalc');
+            const checkoutBtn = document.getElementById('calcCheckoutBtn');
+
+            if (selectedTitles.length === 0) {
+                summaryBox.innerHTML = '<p class="text-gray-400 italic">Belum ada item yang dipilih.</p>';
+                totalDisplay.innerText = 'Rp 0';
+                checkoutBtn.disabled = true;
+                checkoutBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            } else {
+                summaryBox.innerHTML = '<ul class="list-disc list-inside space-y-1">' + selectedTitles.map(t => `<li>${t}</li>`).join('') + '</ul>';
+                totalDisplay.innerText = 'Rp ' + total.toLocaleString('id-ID');
+                checkoutBtn.disabled = false;
+                checkoutBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+
+                // Update button WA action
+                const waText = encodeURIComponent(`Halo Admin DesignKita, saya mau pesan estimasi beberapa item berikut:\n\n- ${selectedTitles.join('\n- ')}\n\nTotal Estimasi: Rp ${total.toLocaleString('id-ID')}`);
+                checkoutBtn.onclick = () => window.open(`https://wa.me/6282308236770?text=${waText}`, '_blank');
+            }
+        }
+
+        // MODAL FUNCTIONS
+        function openModal(id) {
+            const prod = products.find(p => p.id === id);
+            if (!prod) return;
+
+            document.getElementById('modalIcon').innerHTML = `<i class="${prod.icon}"></i>`;
+            document.getElementById('modalCategory').innerText = prod.category;
+            document.getElementById('modalTitle').innerText = prod.title;
+            document.getElementById('modalPrice').innerText = prod.priceText;
+            document.getElementById('modalDesc').innerText = prod.desc;
+
+            const featuresList = document.getElementById('modalFeatures');
+            featuresList.innerHTML = prod.features.map(f => `<li>${f}</li>`).join('');
+
+            const modalOrderBtn = document.getElementById('modalOrderBtn');
+            const waText = encodeURIComponent(`Halo Admin DesignKita, saya mau tanya/pesan layanan: ${prod.title} (${prod.priceText})`);
+            modalOrderBtn.onclick = () => window.open(`https://wa.me/6282308236770?text=${waText}`, '_blank');
+
+            document.getElementById('productModal').classList.remove('hidden');
+        }
+
+        document.getElementById('closeModalBtn').addEventListener('click', () => {
+            document.getElementById('productModal').classList.add('hidden');
+        });
+
+        // SELECT SERVICE IN ORDER FORM AUTOMATICALLY
+        function selectServiceInForm(serviceValue) {
+            const selectEl = document.getElementById('custService');
+            for (let i = 0; i < selectEl.options.length; i++) {
+                if (selectEl.options[i].text.includes(serviceValue) || selectEl.options[i].value.includes(serviceValue)) {
+                    selectEl.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        // FORM SUBMISSION TO WHATSAPP FORMAT
+        document.getElementById('waOrderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('custName').value;
+            const service = document.getElementById('custService').value;
+            const qty = document.getElementById('custQty').value;
+            const deadline = document.getElementById('custDeadline').value || 'Tidak Ada';
+            const notes = document.getElementById('custNotes').value;
+
+            const message = `Halo Admin DesignKita! Saya mau pesan jasa desain.\n\n` +
+                            `📌 *Data Pemesan:*\n` +
+                            `- Nama / Usaha: ${name}\n` +
+                            `- Layanan: ${service}\n` +
+                            `- Jumlah: ${qty}\n` +
+                            `- Deadline: ${deadline}\n\n` +
+                            `📝 *Detail Kebutuhan:*\n${notes}\n\n` +
+                            `Mohon diproses ya kak, terima kasih!`;
+
+            const waUrl = `https://wa.me/6282308236770?text=${encodeURIComponent(message)}`;
+            window.open(waUrl, '_blank');
+        });
+
+        // FILTER BUTTON CLICK EVENTS
+        document.querySelectorAll('#filterContainer .filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('#filterContainer .filter-btn').forEach(b => {
+                    b.className = 'filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition bg-white dark:bg-brand-900 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-brand-800 hover:bg-gray-100';
+                });
+                this.className = 'filter-btn active px-5 py-2.5 rounded-xl text-sm font-semibold transition bg-brand-900 text-white dark:bg-brand-500';
+
+                const filter = this.getAttribute('data-filter');
+                if (filter === 'all') {
+                    renderProducts(products);
+                } else {
+                    const filtered = products.filter(p => p.category === filter);
+                    renderProducts(filtered);
+                }
+            });
+        });
+
+        // SEARCH INPUT FILTERING
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            const filtered = products.filter(p => 
+                p.title.toLowerCase().includes(query) || 
+                p.desc.toLowerCase().includes(query)
+            );
+            renderProducts(filtered);
+        });
+
+        // DARK MODE TOGGLE
+        const themeToggleBtn = document.getElementById('themeToggle');
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // MOBILE MENU TOGGLE
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // INITIALIZATION
+        window.onload = function() {
+            renderProducts(products);
+            renderCalculator();
+        };
+    </script>
+</body>
+</html>
